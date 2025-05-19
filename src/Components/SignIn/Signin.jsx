@@ -1,8 +1,10 @@
 import Lottie from "lottie-react";
 
 import loginLottie from "../../assets/loginLottie.json";
+import useAuth from "../../Hooks/useAuth";
+import SocialLogin from "../../Pages/Shared/SocialLogin/SocialLogin";
 
-const Login = () => {
+const Signin = () => {
   return (
     <div className="hero mx-auto my-12">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -20,6 +22,7 @@ const Login = () => {
                 <a className="link link-hover">Forgot password?</a>
               </div>
               <button className="btn btn-neutral mt-4">Login</button>
+              <SocialLogin></SocialLogin>
             </fieldset>
           </div>
         </div>
@@ -28,4 +31,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;

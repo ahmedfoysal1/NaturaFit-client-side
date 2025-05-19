@@ -1,16 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { HeroUIProvider } from "@heroui/react";
-import Navbarr from "./Pages/Shared/Navbar/Navbarr.jsx";
-import Login from "./Pages/Login/Login.jsx";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router.jsx";
+import AuthProvider from "./Providers/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HeroUIProvider>
-      {/* <App /> */}
-      <Navbarr></Navbarr>
-      <Login></Login>
-    </HeroUIProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>
 );
