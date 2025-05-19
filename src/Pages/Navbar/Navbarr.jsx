@@ -4,16 +4,16 @@ import "./Navbar.css";
 const Navbarr = () => {
   const links = (
     <>
-      <NavLink className={"btn"}>
+      <NavLink to={"/"} className={"btn"}>
         <li>Home</li>
       </NavLink>
-      <NavLink className={"btn"}>
+      <NavLink to={"alltrainer"} className={"btn"}>
         <li>All Trainer</li>
       </NavLink>
-      <NavLink className={"btn"}>
+      <NavLink to={"allclassess"} className={"btn"}>
         <li>All Classes</li>
       </NavLink>
-      <NavLink className={"btn"}>
+      <NavLink to={"community"} className={"btn"}>
         <li>Community</li>
       </NavLink>
     </>

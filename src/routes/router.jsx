@@ -3,6 +3,8 @@ import Main from "../Layout/Main";
 import Signup from "../Components/Signup/Signup";
 import Signin from "../Components/SignIn/SignIn";
 import Home from "../Pages/Home/Home";
+import AllTrainer from "../Pages/AllTrainer/AllTrainer";
+import AllCalssess from "../Pages/AllClassess/AllCalssess";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup></Signup>,
+      },
+      {
+        path: "alltrainer",
+        element: <AllTrainer></AllTrainer>,
+      },
+      {
+        path: "allclassess",
+        element: <AllCalssess></AllCalssess>,
       },
     ],
   },
