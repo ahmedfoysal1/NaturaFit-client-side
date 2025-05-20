@@ -72,9 +72,6 @@ const Home = () => {
               <span className="absolute bottom-0 left-0 w-full h-0 bg-primary transition-all duration-200 ease-in-out group-hover:h-full z-0"></span>
             </button>
           </div>
-          <div className="w-96 md:w-6/12">
-            <Lottie animationData={globeLottie} loop={true}></Lottie>
-          </div>
         </div>
       </div>
       {/*feature card section */}
@@ -126,11 +123,7 @@ const Home = () => {
           </div>
 
           {/* Image / Illustration */}
-          <div
-            className="lg:w-1/2"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
+          <div className="lg:w-1/2" data-aos="fade-up" data-aos-duration="2000">
             <img
               src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80"
               alt="Fitness mission"

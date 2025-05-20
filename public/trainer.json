@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Aiden Walker",
+    "photo": "https://i.pravatar.cc/150?img=1",
+    "details": "Certified strength coach helping people build muscle and confidence.",
+    "expertise": "Strength Training",
+    "experience": 7,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["6:00 AM", "7:00 AM", "5:00 PM"]
+  },
+  {
+    "name": "Mia Chen",
+    "photo": "https://i.pravatar.cc/150?img=2",
+    "details": "Yoga instructor with a passion for mindfulness and flexibility.",
+    "expertise": "Yoga",
+    "experience": 5,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["8:00 AM", "6:00 PM"]
+  },
+  {
+    "name": "Liam Carter",
+    "photo": "https://i.pravatar.cc/150?img=3",
+    "details": "Functional fitness specialist focusing on injury prevention.",
+    "expertise": "Functional Fitness",
+    "experience": 6,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["7:00 AM", "9:00 AM", "3:00 PM"]
+  },
+  {
+    "name": "Sophia Ahmed",
+    "photo": "https://i.pravatar.cc/150?img=4",
+    "details": "Helping women get stronger and more confident through weights.",
+    "expertise": "Weight Training",
+    "experience": 8,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["5:00 AM", "8:00 AM", "6:00 PM"]
+  },
+  {
+    "name": "Noah Kim",
+    "photo": "https://i.pravatar.cc/150?img=5",
+    "details": "Martial arts coach with a background in Muay Thai and boxing.",
+    "expertise": "Martial Arts",
+    "experience": 9,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["10:00 AM", "1:00 PM", "7:00 PM"]
+  },
+  {
+    "name": "Olivia Roy",
+    "photo": "https://i.pravatar.cc/150?img=6",
+    "details": "Pilates expert focusing on posture, core strength, and control.",
+    "expertise": "Pilates",
+    "experience": 4,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["6:30 AM", "11:00 AM", "4:00 PM"]
+  },
+  {
+    "name": "Ethan Patel",
+    "photo": "https://i.pravatar.cc/150?img=7",
+    "details": "CrossFit Level 2 coach pushing limits with performance-based workouts.",
+    "expertise": "CrossFit",
+    "experience": 6,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["6:00 AM", "12:00 PM", "5:00 PM"]
+  },
+  {
+    "name": "Lily Garcia",
+    "photo": "https://i.pravatar.cc/150?img=8",
+    "details": "Zumba and dance fitness coach making workouts fun and exciting.",
+    "expertise": "Zumba",
+    "experience": 5,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["9:00 AM", "2:00 PM", "6:00 PM"]
+  },
+  {
+    "name": "Daniel Lee",
+    "photo": "https://i.pravatar.cc/150?img=9",
+    "details": "Bodybuilding coach focused on hypertrophy and nutrition.",
+    "expertise": "Bodybuilding",
+    "experience": 10,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["5:30 AM", "10:00 AM", "7:00 PM"]
+  },
+  {
+    "name": "Emma Brooks",
+    "photo": "https://i.pravatar.cc/150?img=10",
+    "details": "Fitness trainer blending cardio, HIIT, and mindfulness routines.",
+    "expertise": "HIIT",
+    "experience": 7,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["7:30 AM", "12:00 PM", "5:30 PM"]
+  },
+  {
+    "name": "Jack Nguyen",
+    "photo": "https://i.pravatar.cc/150?img=11",
+    "details": "Certified endurance trainer with a marathon background.",
+    "expertise": "Endurance",
+    "experience": 6,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["6:00 AM", "9:00 AM", "3:00 PM"]
+  },
+  {
+    "name": "Grace Turner",
+    "photo": "https://i.pravatar.cc/150?img=12",
+    "details": "Kettlebell and functional training enthusiast.",
+    "expertise": "Kettlebell Training",
+    "experience": 5,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["7:00 AM", "1:00 PM", "6:00 PM"]
+  },
+  {
+    "name": "Ryan Scott",
+    "photo": "https://i.pravatar.cc/150?img=13",
+    "details": "Certified personal trainer focused on one-on-one coaching.",
+    "expertise": "Personal Training",
+    "experience": 9,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["8:00 AM", "10:00 AM", "4:00 PM"]
+  },
+  {
+    "name": "Zara Khan",
+    "photo": "https://i.pravatar.cc/150?img=14",
+    "details": "Women’s fitness expert empowering clients through mindset and movement.",
+    "expertise": "Women's Fitness",
+    "experience": 7,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["6:30 AM", "11:00 AM", "5:30 PM"]
+  },
+  {
+    "name": "Leo Martinez",
+    "photo": "https://i.pravatar.cc/150?img=15",
+    "details": "TRX and suspension training coach building functional strength.",
+    "expertise": "TRX Training",
+    "experience": 6,
+    "socials": ["facebook", "instagram", "linkedin"],
+    "availableslots": ["7:30 AM", "1:00 PM", "6:30 PM"]
+  }
+]

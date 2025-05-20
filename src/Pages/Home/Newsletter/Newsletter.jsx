@@ -16,11 +16,13 @@ const Newsletter = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          reset();
         } else {
           Swal.fire({
             icon: "error",
             title: `${res.data.message}`,
           });
+          reset();
         }
       })
       .catch((error) => console.log(error));
