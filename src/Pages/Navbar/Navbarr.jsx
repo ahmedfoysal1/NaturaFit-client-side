@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbarr = () => {
+  const { user } = useAuth();
   const links = (
     <>
       <NavLink to={"/"} className={"btn"}>
@@ -19,7 +21,7 @@ const Navbarr = () => {
     </>
   );
   return (
-    <div className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-opacity navbar bg-base-100/30 shadow-sm">
+    <div className="sticky top-0 left-0 w-full z-50 backdrop-blur bg-opacity navbar bg-base-100/30 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,20 +48,32 @@ const Navbarr = () => {
             {links}
           </ul>
         </div>
-        <Link className="text-white font-bold text-2xl" to={"/"}>
+        <Link className="font-bold text-2xl" to={"/"}>
           NaturaFit
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <NavLink className={"btn"} to={"/login"}>
-          Login
-        </NavLink>
-        <NavLink className={"btn"} to={"/signup"}>
-          Sign up
-        </NavLink>
+      <div className="navbar-end gap-2">
+        {user ? (
+          <>
+            <div className="avatar">
+              <div className="ring-primary ring-offset-base-100 w-14 rounded-full ring-2 ring-offset-2">
+                <img src={user?.photoURl} />
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <NavLink className={"btn"} to={"/login"}>
+              Login
+            </NavLink>
+            <NavLink className={"btn"} to={"/signup"}>
+              Sign up
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );

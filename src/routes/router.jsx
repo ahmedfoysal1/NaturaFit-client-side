@@ -5,6 +5,7 @@ import Signin from "../Components/SignIn/SignIn";
 import Home from "../Pages/Home/Home";
 import AllTrainer from "../Pages/AllTrainer/AllTrainer";
 import AllCalssess from "../Pages/AllClassess/AllCalssess";
+import Community from "../Pages/Community/Community";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         path: "allclassess",
         element: <AllCalssess></AllCalssess>,
       },
+      {
+        path: "community",
+        element: <Community></Community>
+      }
     ],
   },
 ]);

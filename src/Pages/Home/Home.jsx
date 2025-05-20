@@ -4,13 +4,22 @@ import { FaDumbbell, FaAppleAlt, FaRunning, FaHeartbeat } from "react-icons/fa";
 import SimpleParallax from "simple-parallax-js";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Lottie from "lottie-react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import globeLottie from "../../assets/globe.json";
+import Testimonial from "./Testimonials/testimonial";
+import Newsletter from "./Newsletter/Newsletter";
 
 const Home = () => {
   useEffect(() => {
     Aos.init();
     Aos.refresh();
   }, []);
+  const navigate = useNavigate();
+  const navigateAllclasses = () => {
+    navigate("allclassess");
+  };
   const features = [
     {
       icon: <FaDumbbell className="text-4xl text-primary" />,
@@ -48,19 +57,23 @@ const Home = () => {
             <img className="h-[600px] w-full" src={img1} alt="" />
           </SimpleParallax>
         </div>
-        <div className="hero-overlay"></div>
-        <div className="hero-content text-neutral-content text-center">
+        <div className="hero-content text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+            <h1 className="mb-5 text-5xl font-bold text-blue-500">NaturaFit</h1>
             <p className="mb-5">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
             <button className="relative overflow-hidden group px-6 py-3 text-white font-semibold bg-transparent border border-white rounded-md">
-              <span className="relative z-10">Hover Me</span>
+              <span onClick={navigateAllclasses} className="relative z-10">
+                All Classes
+              </span>
               <span className="absolute bottom-0 left-0 w-full h-0 bg-primary transition-all duration-200 ease-in-out group-hover:h-full z-0"></span>
             </button>
+          </div>
+          <div className="w-96 md:w-6/12">
+            <Lottie animationData={globeLottie} loop={true}></Lottie>
           </div>
         </div>
       </div>
@@ -113,7 +126,11 @@ const Home = () => {
           </div>
 
           {/* Image / Illustration */}
-          <div className="lg:w-1/2" data-aos="fade-left" data-aos-duration="2000">
+          <div
+            className="lg:w-1/2"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <img
               src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80"
               alt="Fitness mission"
@@ -122,6 +139,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/*testimonial */}
+      <Testimonial></Testimonial>
+      <Newsletter></Newsletter>
     </div>
   );
 };
