@@ -3,9 +3,10 @@ import Main from "../Layout/Main";
 import Signup from "../Components/Signup/Signup";
 import Signin from "../Components/SignIn/SignIn";
 import Home from "../Pages/Home/Home";
-import AllTrainer from "../Pages/AllTrainer/AllTrainer";
+import AllTrainer from "../Pages/AllTrainer/AllTrainer/AllTrainer";
 import AllCalssess from "../Pages/AllClassess/AllCalssess";
 import Community from "../Pages/Community/Community";
+import TrainerDetails from "../Pages/AllTrainer/TrainerDetails/TrainerDetails";
 
 export const router = createBrowserRouter([
   {
@@ -34,8 +35,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "community",
-        element: <Community></Community>
-      }
+        element: <Community></Community>,
+      },
+      {
+        path: "trainer/:id",
+        element: <TrainerDetails></TrainerDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/trainers/${params.id}`),
+      },
     ],
   },
 ]);
