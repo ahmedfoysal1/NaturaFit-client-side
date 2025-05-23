@@ -1,9 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Navbarr = () => {
-  const { user } = useAuth();
+  const { user, signOutUser } = useAuth();
+  const handleSignOut = () => {
+    signOutUser()
+      .then((res) => {
+        toast.success("Successfully Signout");
+      })
+      .catch((error) => console.log(error));
+  };
   const links = (
     <>
       <NavLink to={"/"} className={"btn"}>
@@ -18,6 +26,11 @@ const Navbarr = () => {
       <NavLink to={"community"} className={"btn"}>
         <li>Community</li>
       </NavLink>
+      {user && (
+        <NavLink to={"dashboard"} className={"btn"}>
+          <li>Dashboard</li>
+        </NavLink>
+      )}
     </>
   );
   return (
@@ -63,6 +76,9 @@ const Navbarr = () => {
                 <img src={user?.photoURl} />
               </div>
             </div>
+            <button onClick={handleSignOut} className="btn">
+              Sign out
+            </button>
           </>
         ) : (
           <>

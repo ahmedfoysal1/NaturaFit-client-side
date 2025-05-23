@@ -12,7 +12,9 @@ const AllTrainer = () => {
   const [trainerss] = useTrainer();
   return (
     <div>
-      <h2 className="text-3xl">All Trainer</h2>
+      <h2 className="text-3xl text-center text-blue-400 font-bold my-2">
+        All Trainer
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 m-3">
         {trainerss.map((trainer, idx) => (
           <div

@@ -7,6 +7,9 @@ import AllTrainer from "../Pages/AllTrainer/AllTrainer/AllTrainer";
 import AllCalssess from "../Pages/AllClassess/AllCalssess";
 import Community from "../Pages/Community/Community";
 import TrainerDetails from "../Pages/AllTrainer/TrainerDetails/TrainerDetails";
+import Dashboard from "../Dashboard/Dashboard/Dashboard";
+import TrainerBooked from "../Pages/AllTrainer/TrainerBooked/TrainerBooked";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +46,23 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/trainers/${params.id}`),
       },
+      {
+        path: "trainerbooked/:id/:slot",
+        element: (
+          <PrivateRoute>
+            <TrainerBooked></TrainerBooked>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/trainers/${params.id}?slot=${encodeURIComponent(params.slot)}`
+          ),
+      },
     ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [{}],
   },
 ]);
