@@ -6,7 +6,7 @@ import Home from "../Pages/Home/Home";
 import AllTrainer from "../Pages/AllTrainer/AllTrainer/AllTrainer";
 import AllCalssess from "../Pages/AllClassess/AllCalssess";
 import Community from "../Pages/Community/Community";
-import TrainerDetails from "../Pages/AllTrainer/TrainerDetails/TrainerDetails";
+import TrainerDetails from "../Pages/AllTrainer/TrainerDetails/Trainerdetails";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import TrainerBooked from "../Pages/AllTrainer/TrainerBooked/TrainerBooked";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -55,7 +55,9 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/trainers/${params.id}?slot=${encodeURIComponent(params.slot)}`
+            `http://localhost:5000/trainers/${
+              params.id
+            }?slot=${encodeURIComponent(params.slot)}`
           ),
       },
     ],

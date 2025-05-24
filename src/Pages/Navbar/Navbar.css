@@ -1,4 +1,6 @@
 .active {
-  background-color: rgb(54, 54, 237);
-  /* text-decoration: underline; */
+  background-color: rgb(89, 89, 252);
+  color: white;
+  border: none;
+  box-shadow: none;
 }

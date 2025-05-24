@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
-const useClassess = (search) => {
+const useClassess = (search = "") => {
   const axiosPublic = useAxiosPublic();
   const {
     data: classess = [],

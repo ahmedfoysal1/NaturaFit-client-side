@@ -4,12 +4,8 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const TrainerDetails = () => {
-  const data = useLoaderData();
+  const trainer = useLoaderData();
   const navigate = useNavigate();
-  const [slotno, setSlotNot] = useState([]);
-  const handleSlotNo = (slot) => {
-    setSlotNot(slot);
-  };
   const handleBack = () => {
     navigate(-1);
   };
@@ -22,28 +18,52 @@ const TrainerDetails = () => {
       </div>
       <div className="w-8/12 mx-auto flex justify-evenly">
         <div className="w-1/2">
-          <div className="card bg-base-100 shadow-sm">
-            <figure className="lg:px-10 lg:pt-10">
-              <img src={data.photo} alt="Shoes" className="rounded-xl" />
+          {/* <div className="w-1/2 bg-base-100 shadow-sm space-y-3">
+            <figure>
+              <img src={trainer.photo} alt="Shoes" className="rounded-xl" />
             </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Card Title</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
+            <div className="text-start">
+              <h2 className="text-2xl font-semibold">
+                <span className="font-bold">Trainer:</span> {trainer.name}
+              </h2>
+              <p className="font-semibold">
+                <span className="text-xl font-bold">Details:</span>
+                {trainer.details}
               </p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+              <p className="font-semibold"><span>Expertise:</span>{trainer.expertise}</p>
+            </div>
+          </div> */}
+          <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+            <img
+              src={trainer.photo}
+              alt={trainer.name}
+              className="w-full h-56 object-cover"
+            />
+            <div className="p-5 flex flex-col flex-grow">
+              <h2 className="text-xl font-bold text-gray-800">
+                {trainer.name}
+              </h2>
+              <p className="text-gray-600 text-sm mt-2">{trainer.details}</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {trainer.expertise.split(",").map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full border"
+                  >
+                    {item.trim()}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <div className="divider divider-horizontal divider-start"></div>
         <div className="flex flex-col w-1/2">
-          {data.availableslots.map((slot, idx) => (
+          {trainer.availableslots.map((slot, idx) => (
             <Link
               onClick={() => handleSlotNo(slot)}
-              to={`/trainerbooked/${data._id}/${slot}`}
+              to={`/trainerbooked/${trainer._id}/${slot}`}
               key={idx}
               className="btn p-16 md:p-10 my-4"
             >
