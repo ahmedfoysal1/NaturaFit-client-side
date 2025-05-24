@@ -35,6 +35,7 @@ export const router = createBrowserRouter([
       {
         path: "allclassess",
         element: <AllCalssess></AllCalssess>,
+        loader: () => fetch("http://localhost:5000/classesscount"),
       },
       {
         path: "community",

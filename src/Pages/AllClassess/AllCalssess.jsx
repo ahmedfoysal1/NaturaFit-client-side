@@ -3,12 +3,37 @@ import useClassess from "../../Hooks/useClassess";
 import { IoSearch } from "react-icons/io5";
 import useTrainer from "../../Hooks/useTrainer";
 import Drawer from "./Drawer";
+import { useLoaderData } from "react-router-dom";
+import "./allclassess.css";
 
 const AllCalssess = () => {
   const [search, setSeach] = useState("");
   const [classess] = useClassess(search);
-  const [trainerss] = useTrainer();
-  console.log(trainerss);
+  const { count } = useLoaderData();
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(0);
+  const numberOfPages = Math.ceil(count / itemsPerPage);
+  const pages = [...Array(numberOfPages).keys()];
+  const handleItemsPerPage = (e) => {
+    console.log(e.target.value);
+    const val = parseInt(e.target.value);
+    setItemsPerPage(val);
+    setCurrentPage(0);
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  console.log(currentPage);
   return (
     <div>
       <div className="flex justify-between mx-3 text-center items-center">
@@ -44,6 +69,29 @@ const AllCalssess = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="text-center my-9 space-x-2">
+        <button onClick={handlePrev} className="btn">
+          Prev
+        </button>
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={`btn ${currentPage === page && "selected"}`}
+          >
+            {page}
+          </button>
+        ))}
+        <button onClick={handleNext} className="btn">
+          Next
+        </button>
+        <select value={itemsPerPage} onChange={handleItemsPerPage}>
+          <option value="4">1</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
       </div>
     </div>
   );
