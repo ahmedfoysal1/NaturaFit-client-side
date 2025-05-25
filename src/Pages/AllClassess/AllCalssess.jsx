@@ -8,10 +8,10 @@ import "./allclassess.css";
 
 const AllCalssess = () => {
   const [search, setSeach] = useState("");
-  const [classess] = useClassess(search);
   const { count } = useLoaderData();
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(0);
+  const [classess] = useClassess(search, currentPage, itemsPerPage);
   const numberOfPages = Math.ceil(count / itemsPerPage);
   const pages = [...Array(numberOfPages).keys()];
   const handleItemsPerPage = (e) => {
