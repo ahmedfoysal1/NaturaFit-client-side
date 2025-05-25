@@ -10,6 +10,7 @@ import TrainerDetails from "../Pages/AllTrainer/TrainerDetails/Trainerdetails";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import TrainerBooked from "../Pages/AllTrainer/TrainerBooked/TrainerBooked";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Betrainer from "../Pages/AllTrainer/BeTrainer/Betrainer";
 
 export const router = createBrowserRouter([
   {
@@ -58,8 +59,16 @@ export const router = createBrowserRouter([
           fetch(
             `http://localhost:5000/trainers/${
               params.id
-            }?slot=${encodeURIComponent(params.slot)}`
+            }?slot=${(params.slot)}`
           ),
+      },
+      {
+        path: "betrainer",
+        element: (
+          <PrivateRoute>
+            <Betrainer></Betrainer>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -34,7 +34,7 @@ const Navbarr = () => {
     </>
   );
   return (
-    <div className="sticky top-0 left-0 w-full z-50 backdrop-blur bg-opacity navbar bg-base-100/30 shadow-sm">
+    <div className="sticky top-0 left-0 w-full z-50 backdrop-blur bg-opacity navbar bg-gray-200/30 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,7 +73,7 @@ const Navbarr = () => {
           <>
             <div className="avatar">
               <div className="ring-primary ring-offset-base-100 w-14 rounded-full ring-2 ring-offset-2">
-                <img src={user?.photoURl} />
+                <img src={user?.photoURL} />
               </div>
             </div>
             <button onClick={handleSignOut} className="btn">

@@ -78,7 +78,7 @@ const AllCalssess = () => {
           <button
             key={page}
             onClick={() => setCurrentPage(page)}
-            className={`btn ${currentPage === page && "selected"}`}
+            className={`btn ${currentPage === page ? "selected" : undefined}`}
           >
             {page}
           </button>

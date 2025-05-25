@@ -73,10 +73,13 @@ const TrainerDetails = () => {
         </div>
       </div>
       <div className="w-full flex flex-col items-center justify-center">
-        <button className="btn w-1/3 my-2 p-8 text-lg bg-blue-200">
+        <Link
+          to={"/betrainer"}
+          className="btn w-1/3 my-2 p-8 text-lg bg-blue-200"
+        >
           Be A Trainer
           <FaCircleArrowRight />
-        </button>
+        </Link>
         <button onClick={handleBack} className="btn w-1/3 my-2 bg-blue-200">
           <FaArrowCircleLeft /> Back
         </button>
