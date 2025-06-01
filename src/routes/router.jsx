@@ -11,6 +11,11 @@ import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import TrainerBooked from "../Pages/AllTrainer/TrainerBooked/TrainerBooked";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Betrainer from "../Pages/AllTrainer/BeTrainer/Betrainer";
+import NewsletterSubscriber from "../Dashboard/NewLetters/NewsletterSubscriber";
+import Alltrainertable from "../Dashboard/AllTrainertable/Alltrainertable";
+import Appliedtrainers from "../Dashboard/Appliedtrainer/Appliedtrainers";
+import Balance from "../Dashboard/Balance/Balance";
+import Addnewclass from "../Dashboard/Addnewclass/Addnewclass";
 
 export const router = createBrowserRouter([
   {
@@ -57,9 +62,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/trainers/${
-              params.id
-            }?slot=${(params.slot)}`
+            `http://localhost:5000/trainers/${params.id}?slot=${params.slot}`
           ),
       },
       {
@@ -74,7 +77,32 @@ export const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
-    children: [{}],
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "newslettersubscribers",
+        element: <NewsletterSubscriber></NewsletterSubscriber>,
+      },
+      {
+        path: "alltrainerinfo",
+        element: <Alltrainertable></Alltrainertable>,
+      },
+      {
+        path: "appliedtrainer",
+        element: <Appliedtrainers></Appliedtrainers>,
+      },
+      {
+        path: "balance",
+        element: <Balance></Balance>,
+      },
+      {
+        path: "addnewclass",
+        element: <Addnewclass></Addnewclass>,
+      },
+    ],
   },
 ]);

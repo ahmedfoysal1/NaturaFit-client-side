@@ -2,12 +2,14 @@ import { Controller, useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import { useState } from "react";
 
 const animatedComponents = makeAnimated();
 
 const Betrainer = () => {
   const { user } = useAuth();
-  const { register, handleSubmit, control } = useForm();
+  const { register, handleSubmit, control, setValue } = useForm();
+  const [status, setStatus] = useState("");
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -20,6 +22,11 @@ const Betrainer = () => {
     { value: "Thursday", label: "Thursday" },
     { value: "Friday", label: "Friday" },
   ];
+
+  const handleSetValue = () => {
+    setValue("status", "Pending");
+  };
+
   return (
     <div>
       <h1>BE A TRAINER</h1>
@@ -149,7 +156,12 @@ const Betrainer = () => {
                 />
               )}
             ></Controller>
-            <input type="submit" className="btn btn-primary" value="Apply" />
+            <input
+              type="submit"
+              onClick={handleSetValue}
+              className="btn btn-primary"
+              value="Apply"
+            />
           </form>
         </div>
       </div>

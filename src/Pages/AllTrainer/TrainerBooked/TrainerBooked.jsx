@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import useClassess from "../../../Hooks/useClassess";
+import PackageCard from "./PackageCard";
 
 const TrainerBooked = () => {
   const data = useLoaderData();
@@ -8,7 +9,7 @@ const TrainerBooked = () => {
   const specificClass = classess.filter(
     (classItem) => classItem.name.toLowerCase() === data.expertise.toLowerCase()
   );
-  console.log(specificClass);
+  // console.log(data);
   return (
     <div>
       <h2 className="text-2xl text-center my-2 font-semibold text-blue-500">
@@ -49,6 +50,7 @@ const TrainerBooked = () => {
           </div>
         ))}
       </div>
+      <PackageCard data={data}></PackageCard>
     </div>
   );
 };
