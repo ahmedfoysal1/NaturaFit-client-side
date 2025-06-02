@@ -16,6 +16,7 @@ import Alltrainertable from "../Dashboard/AllTrainertable/Alltrainertable";
 import Appliedtrainers from "../Dashboard/Appliedtrainer/Appliedtrainers";
 import Balance from "../Dashboard/Balance/Balance";
 import Addnewclass from "../Dashboard/Addnewclass/Addnewclass";
+import Users from "../Dashboard/Users/Users";
 
 export const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        path: 'users',
+        element: <Users></Users>
+      },
       {
         path: "newslettersubscribers",
         element: <NewsletterSubscriber></NewsletterSubscriber>,

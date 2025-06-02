@@ -3,10 +3,12 @@ import { PiChalkboardTeacherThin } from "react-icons/pi";
 import { VscGitStashApply } from "react-icons/vsc";
 import { MdAttachMoney } from "react-icons/md";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
 import "./dashboard.css";
 
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { FaRegUser } from "react-icons/fa";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -22,6 +24,26 @@ const Dashboard = () => {
           <h2 className="font-bold text-xl my-2">{user?.displayName}</h2>
         </div>
         <ul className="main p-4 space-y-2">
+          <li>
+            <NavLink
+              className={
+                "flex text-center items-center p-2 gap-2 rounded-lg border"
+              }
+              to={"/"}
+            >
+              <IoHomeOutline /> Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={
+                "flex text-center items-center p-2 gap-2 rounded-lg border"
+              }
+              to={"/dashboard/users"}
+            >
+              <FaRegUser /> All Users
+            </NavLink>
+          </li>
           <li>
             <NavLink
               className={
