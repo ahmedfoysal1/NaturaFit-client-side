@@ -5,7 +5,8 @@ const useClassess = (search = "", currentPage = 0, itemsPerPage = 0) => {
   const axiosPublic = useAxiosPublic();
   const {
     data: classess = [],
-    isPending: loading,
+    isPending,
+    isFetching,
     refetch,
   } = useQuery({
     queryKey: ["allclassess", search, currentPage, itemsPerPage],
@@ -16,6 +17,7 @@ const useClassess = (search = "", currentPage = 0, itemsPerPage = 0) => {
       return res.data;
     },
   });
+  const loading = isFetching || isPending;
   return [classess, loading, refetch];
 };
 

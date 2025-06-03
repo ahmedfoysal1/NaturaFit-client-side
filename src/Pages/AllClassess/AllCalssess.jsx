@@ -1,7 +1,6 @@
 import { useState } from "react";
 import useClassess from "../../Hooks/useClassess";
 import { IoSearch } from "react-icons/io5";
-import useTrainer from "../../Hooks/useTrainer";
 import Drawer from "./Drawer";
 import { useLoaderData } from "react-router-dom";
 import "./allclassess.css";
@@ -11,7 +10,7 @@ const AllCalssess = () => {
   const { count } = useLoaderData();
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(0);
-  const [classess] = useClassess(search, currentPage, itemsPerPage);
+  const [classess,loading] = useClassess(search, currentPage, itemsPerPage);
   const numberOfPages = Math.ceil(count / itemsPerPage);
   const pages = [...Array(numberOfPages).keys()];
   const handleItemsPerPage = (e) => {
@@ -32,8 +31,8 @@ const AllCalssess = () => {
       setCurrentPage(currentPage + 1);
     }
   };
-
   console.log(currentPage);
+
   return (
     <div>
       <div className="flex justify-between mx-3 text-center items-center">
@@ -51,25 +50,35 @@ const AllCalssess = () => {
           <Drawer></Drawer>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {classess.map((classs, idx) => (
-          <div
-            key={classs._id}
-            className="card bg-base-100 shadow-sm border gap-3 m-3"
-          >
-            <figure className="w-ful h-60 object-cover">
-              <img src={classs.image} alt="class" />
-            </figure>
-            <div className="card-body">
-              <h2 className="text-xl font-semibold">{classs.name}</h2>
-              <p>{classs.description}</p>
-              <p className="font-bold">{classs.duration}</p>
-              <p className="font-semibold">{classs.level}</p>
-              <div></div>
-            </div>
+      {loading ? (
+        <>
+          <div className="w-full text-center">
+            <span className="loading loading-bars loading-xl"></span>
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {classess.map((classs, idx) => (
+              <div
+                key={classs._id}
+                className="card bg-base-100 shadow-sm border gap-3 m-3"
+              >
+                <figure className="w-ful h-60 object-cover">
+                  <img src={classs.image} alt="class" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="text-xl font-semibold">{classs.name}</h2>
+                  <p>{classs.description}</p>
+                  <p className="font-bold">{classs.duration}</p>
+                  <p className="font-semibold">{classs.level}</p>
+                  <div></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
       <div className="text-center my-9 space-x-2">
         <button onClick={handlePrev} className="btn">
           Prev

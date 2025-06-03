@@ -57,8 +57,8 @@ const Home = () => {
             <img className="h-[600px] w-full" src={img1} alt="" />
           </SimpleParallax>
         </div>
-        <div className="hero-content text-neutral-content">
-          <div className="max-w-md">
+        <div className="card hero-content text-neutral-content">
+          <div className="card-body text-center max-w-md">
             <h1 className="mb-5 text-5xl font-bold text-blue-500">NaturaFit</h1>
             <p className="mb-5">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

@@ -17,6 +17,7 @@ import Appliedtrainers from "../Dashboard/Appliedtrainer/Appliedtrainers";
 import Balance from "../Dashboard/Balance/Balance";
 import Addnewclass from "../Dashboard/Addnewclass/Addnewclass";
 import Users from "../Dashboard/Users/Users";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -79,22 +80,34 @@ export const router = createBrowserRouter([
   {
     path: "dashboard",
     element: (
-      <PrivateRoute>
+      <AdminRoute>
         <Dashboard></Dashboard>
-      </PrivateRoute>
+      </AdminRoute>
     ),
     children: [
       {
-        path: 'users',
-        element: <Users></Users>
+        path: "users",
+        element: (
+          <AdminRoute>
+            <Users></Users>
+          </AdminRoute>
+        ),
       },
       {
         path: "newslettersubscribers",
-        element: <NewsletterSubscriber></NewsletterSubscriber>,
+        element: (
+          <AdminRoute>
+            <NewsletterSubscriber></NewsletterSubscriber>
+          </AdminRoute>
+        ),
       },
       {
         path: "alltrainerinfo",
-        element: <Alltrainertable></Alltrainertable>,
+        element: (
+          <AdminRoute>
+            <Alltrainertable></Alltrainertable>
+          </AdminRoute>
+        ),
       },
       {
         path: "appliedtrainer",

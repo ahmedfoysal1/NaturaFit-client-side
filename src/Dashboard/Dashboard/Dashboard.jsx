@@ -9,9 +9,15 @@ import "./dashboard.css";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { FaRegUser } from "react-icons/fa";
+import useAdmin from "../../Hooks/useAdmin";
+import useIsTrainer from "../../Hooks/useIsTrainer";
 
 const Dashboard = () => {
   const { user } = useAuth();
+  const [isAdmin] = useAdmin();
+  const [isTrainer] = useIsTrainer();
+  console.log("dashboard admin", isAdmin);
+  console.log("dashboard trainer", isTrainer);
   return (
     <div className="flex">
       <div className="h-full text-center m-2 border p-2">
